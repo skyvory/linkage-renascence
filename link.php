@@ -64,6 +64,9 @@ foreach($lines as $line) {
   p:hover {
     background-color: aquamarine;
   }
+  a:visited {
+    color: red;
+  }
 </style>
 
 </html>
