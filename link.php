@@ -36,6 +36,7 @@ $lines = file($txtfile, FILE_IGNORE_NEW_LINES);
 // print_r($lines);
 sort($lines, SORT_REGULAR);
 
+ $already1 = file("hgama pack 7b.txt", FILE_IGNORE_NEW_LINES);
 foreach($lines as $line) {
  // $line = mb_convert_encoding($line, "SJIS");
  $url = mb_rawurlencode($line);
@@ -44,8 +45,14 @@ foreach($lines as $line) {
   ?>
     <a href="https://google.com/search?q=<?= $url ?>&tbm=isch">
 
+    <?php if(in_array($line,$already1)) { ?>
+    <p style="margin:0 0;display:block;background-color:pink;">
+    <?php } else { ?>
+    <p style="margin:0 0;display:block;">
+    <?php } ?>
       <?=$line?>
-    </a><br>
+    </p>
+    </a>
     <?php
 }
 
