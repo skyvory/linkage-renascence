@@ -34,6 +34,7 @@ $txtfile = $_GET['txt'];
 // $filename = 'konkon.txt';
 $lines = file($txtfile, FILE_IGNORE_NEW_LINES);
 // print_r($lines);
+sort($lines, SORT_REGULAR);
 
 foreach($lines as $line) {
   ?>
