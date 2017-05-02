@@ -37,8 +37,13 @@ $lines = file($txtfile, FILE_IGNORE_NEW_LINES);
 sort($lines, SORT_REGULAR);
 
 foreach($lines as $line) {
+ // $line = mb_convert_encoding($line, "SJIS");
+ $url = mb_rawurlencode($line);
+ //$link = '<a href="https://google.com/search?q=' . $url . '&tbm=isch" target="_blank">' . $url . '</a><br>';
+
   ?>
-    <a href="https://google.com/search?q=<?= $line ?>&tbm=isch" target="_blank" class="tabable" onclick="clack()">
+    <a href="https://google.com/search?q=<?= $url ?>&tbm=isch">
+
       <?=$line?>
     </a><br>
     <?php
