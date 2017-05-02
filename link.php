@@ -60,4 +60,10 @@ foreach($lines as $line) {
 
 </body>
 
+<style>
+  p:hover {
+    background-color: aquamarine;
+  }
+</style>
+
 </html>
