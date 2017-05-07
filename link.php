@@ -37,6 +37,7 @@ $lines = file($txtfile, FILE_IGNORE_NEW_LINES);
 sort($lines, SORT_REGULAR);
 
  $already1 = file("hgama pack 7b.txt", FILE_IGNORE_NEW_LINES);
+ $already2 = file("pack8b.txt", FILE_IGNORE_NEW_LINES);
 foreach($lines as $line) {
  // $line = mb_convert_encoding($line, "SJIS");
  $url = mb_rawurlencode($line);
@@ -45,7 +46,7 @@ foreach($lines as $line) {
   ?>
     <a href="https://google.com/search?q=<?= $url ?>&tbm=isch">
 
-    <?php if(in_array($line,$already1)) { ?>
+    <?php if(in_array($line,$already1) || in_array($line, $already2)) { ?>
     <p style="margin:0 0;display:block;background-color:pink;">
     <?php } else { ?>
     <p style="margin:0 0;display:block;">
